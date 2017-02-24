@@ -15,6 +15,8 @@ public class LoggedinFragment extends Fragment {
 
 
     public LoggedinFragment() {
+
+
         // Required empty public constructor
     }
 

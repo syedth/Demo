@@ -1,8 +1,8 @@
 package git.helloworld;
 
 
+import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -27,9 +27,9 @@ public class LoginFragment extends MainActivityFragment {
     Button createsignUp;
     Button createlogin;
     Button forgotpassword;
-    private TextView txtUser;
+
     private EditText edituser;
-    private TextView txtpass;
+
     private EditText editpass;
 
 
@@ -60,7 +60,6 @@ public class LoginFragment extends MainActivityFragment {
                     getMainActivity().switchToFragment(new LoggedinFragment(), true);
 
 
-
                 } else {
                     Toast.makeText(getActivity(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
@@ -82,10 +81,10 @@ public class LoginFragment extends MainActivityFragment {
                 Toast.makeText(getActivity(), "A link  has been sent to registered e-mail id", Toast.LENGTH_LONG).show();
             }
         });
+
+
         return view;
-
-
-
     }
+
 
 }
