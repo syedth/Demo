@@ -6,6 +6,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="50dp"
+    android:background="@color/colorAccent"
     tools:context="git.helloworld.LoginFragment">
 
     <TextView
