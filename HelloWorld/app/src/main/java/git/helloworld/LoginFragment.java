@@ -2,6 +2,7 @@ package git.helloworld;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -55,7 +56,8 @@ public class LoginFragment extends MainActivityFragment {
             public void onClick(View v) {
 
                 if (username.equals(edituser.getText().toString()) && password.equals(editpass.getText().toString())) {
-                    getMainActivity().switchToFragment(new LoggedinFragment(), true);
+                    Intent newEntry = new Intent(getMainActivity(), NavigationDrawer.class);
+                    startActivity(newEntry);
 
 
                 } else {

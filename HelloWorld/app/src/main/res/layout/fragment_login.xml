@@ -6,7 +6,6 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="50dp"
-    android:background="@color/colorAccent"
     tools:context="git.helloworld.LoginFragment">
 
     <TextView
@@ -70,7 +69,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/create_linear"
         android:text="Forgot Password?"
-        android:background="#ffffff"
         android:textAllCaps="false" />
 
 </RelativeLayout>
