@@ -69,7 +69,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/create_linear"
         android:text="Forgot Password?"
-        android:background="#ffffff"
         android:textAllCaps="false" />
 
 </RelativeLayout>
