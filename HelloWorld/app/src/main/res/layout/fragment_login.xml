@@ -18,9 +18,11 @@
         android:id="@+id/create_edit_text_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:layout_below="@id/create_text_user"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:backgroundTint="@color/grey"
+        android:textCursorDrawable="@drawable/mycursor" />
 
     <TextView
         android:id="@+id/create_text_pass"
@@ -34,8 +36,10 @@
         android:id="@+id/create_edit_text_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/create_text_pass"
+        android:backgroundTint="@color/grey"
         android:inputType="textPassword"
-        android:layout_below="@id/create_text_pass" />
+        android:textCursorDrawable="@drawable/mycursor" />
 
     <LinearLayout
         android:id="@+id/create_linear"
