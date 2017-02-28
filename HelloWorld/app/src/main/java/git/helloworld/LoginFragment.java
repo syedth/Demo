@@ -79,7 +79,7 @@ public class LoginFragment extends MainActivityFragment {
         forgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "A link  has been sent to registered e-mail id", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "A Reset link  has been sent to registered email id", Toast.LENGTH_LONG).show();
             }
         });
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="git.helloworld.FeedbackActivity">
+
+    <TextView
+        android:id="@+id/text_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Post your feedback here" />
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_feedback"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:theme="@style/RatingBar" />
+
+
+    <TextView
+        android:id="@+id/text_note"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please leave a comment" />
+
+    <EditText
+        android:id="@+id/edit_text_note"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:textCursorDrawable="@drawable/mycursor"
+        android:background="@null"
+        android:layout_below="@id/text_note" />
+
+    <Button
+        android:id="@+id/btnsend"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text_note"
+        android:text="Send" />
+
+
+</RelativeLayout>

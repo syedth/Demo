@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_compose_email"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="git.helloworld.ComposeEmail">
+
+    <TextView
+        android:id="@+id/text_compose_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:text="From" />
+
+    <EditText
+        android:id="@+id/edit_compose_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@id/text_compose_from"
+        android:background="@null"
+        android:inputType="textEmailAddress"
+        android:textCursorDrawable="@drawable/mycursor" />
+
+    <View
+        android:id="@+id/line_from"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/edit_compose_from"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+    <TextView
+        android:id="@+id/text_compose_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_from"
+        android:paddingLeft="16dp"
+        android:paddingTop="10dp"
+        android:text="To" />
+
+    <EditText
+        android:id="@+id/edit_compose_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_from"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@id/text_compose_to"
+        android:background="@null"
+        android:inputType="textEmailAddress" />
+
+    <View
+        android:id="@+id/line_to"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/edit_compose_to"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+    <EditText
+        android:id="@+id/edit_compose_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_to"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@null"
+        android:hint="Subject"
+        android:inputType="text" />
+
+    <View
+        android:id="@+id/line_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/edit_compose_subject"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+    <EditText
+        android:id="@+id/edit_compose_compose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_subject"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="13dp"
+        android:ellipsize="start"
+        android:hint="Compose email"
+        android:background="@null"
+        android:inputType="none" />
+
+
+</RelativeLayout>

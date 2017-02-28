@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,15 +27,13 @@ public class NavigationDrawer extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        toolbar.setTitle("Profile");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Used for Opening e-mail", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+                Intent intent = new Intent(NavigationDrawer.this, ComposeEmail.class);
+                startActivity(intent);            }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -97,6 +96,10 @@ public class NavigationDrawer extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_logout) {
+
+            Intent intent = new Intent(NavigationDrawer.this, MainActivity.class);
+            startActivity(intent);
+            Toast.makeText(getBaseContext(),"Logout Successful",Toast.LENGTH_LONG).show();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
