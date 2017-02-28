@@ -10,8 +10,7 @@ import android.widget.Toast;
 
 public class FeedbackActivity extends AppCompatActivity {
 
-    RatingBar ratingbar;
-    Button btnsubmit;
+
     Button btnsend;
 
     @Override
@@ -19,14 +18,14 @@ public class FeedbackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
-        btnsend = (Button)findViewById(R.id.btnsend);
+        btnsend = (Button) findViewById(R.id.btnsend);
         btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(FeedbackActivity.this, NavigationDrawer.class);
                 startActivity(intent);
-                Toast.makeText(getBaseContext(),"your feedback has been saved successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "your feedback has been saved successfully", Toast.LENGTH_LONG).show();
             }
         });
 
