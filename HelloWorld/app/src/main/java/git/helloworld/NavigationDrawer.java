@@ -1,6 +1,15 @@
 package git.helloworld;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -14,15 +23,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class NavigationDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,7 +47,8 @@ public class NavigationDrawer extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NavigationDrawer.this, ComposeEmail.class);
-                startActivity(intent);            }
+                startActivity(intent);
+            }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -101,7 +115,7 @@ public class NavigationDrawer extends AppCompatActivity
 
             Intent intent = new Intent(NavigationDrawer.this, MainActivity.class);
             startActivity(intent);
-            Toast.makeText(getBaseContext(),"Logout Successful",Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Logout Successful", Toast.LENGTH_LONG).show();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

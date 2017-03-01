@@ -4,23 +4,20 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        switchToFragment(new LoginFragment(),true);
+        switchToFragment(new LoginFragment(), true);
+
 
     }
-
 
 
     @Override
@@ -35,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switchToFragment(targetFragment, addToBackStack, null);
     }
 
-   public void switchToFragment(Fragment targetFragment, boolean addToBackStack, Bundle bundle) {
+    public void switchToFragment(Fragment targetFragment, boolean addToBackStack, Bundle bundle) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         if (bundle != null) {
@@ -57,9 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public boolean onKeyDown(int keyCode, KeyEvent keyEvent) {
         super.onKeyDown(keyCode, keyEvent);
-        int count = getSupportFragmentManager().getBackStackEntryCount()-1;
+        int count = getSupportFragmentManager().getBackStackEntryCount() - 1;
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (getSupportFragmentManager().getFragments().get(count) instanceof LoginFragment ) {
+            if (getSupportFragmentManager().getFragments().get(count) instanceof LoginFragment) {
                 finish();
                 return false;
             } else {
