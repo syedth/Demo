@@ -17,6 +17,9 @@
     <EditText
         android:id="@+id/signup_edit_text_user"
         android:layout_below="@id/signup_text_user"
+        android:inputType="text"
+        android:textCursorDrawable="@drawable/mycursor"
+        android:backgroundTint="@color/grey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
@@ -28,6 +31,9 @@
     <EditText
         android:id="@+id/signup_edit_text_pass"
         android:layout_below="@id/signup_text_pass"
+        android:textCursorDrawable="@drawable/mycursor"
+        android:backgroundTint="@color/grey"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button

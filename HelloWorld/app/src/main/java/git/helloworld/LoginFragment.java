@@ -11,7 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.CallbackManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -26,11 +36,11 @@ public class LoginFragment extends MainActivityFragment {
     Button createsignUp;
     Button createlogin;
     Button forgotpassword;
-
     private EditText edituser;
-
     private EditText editpass;
-
+    private LoginButton loginButton;
+    private CallbackManager callbackManager;
+    private TextView info;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -42,15 +52,62 @@ public class LoginFragment extends MainActivityFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         getActivity().setTitle("Log in");
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+
+        loginButton = (LoginButton)view.findViewById(R.id.login_button);
+        info = (TextView)view.findViewById(R.id.info);
+
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+                info.setText(
+                        "User ID: "
+                                + loginResult.getAccessToken().getUserId()
+                                + "\n" +
+                                "Auth Token: "
+                                + loginResult.getAccessToken().getToken()
+                );
+
+            }
+
+
+            @Override
+            public void onCancel() {
+
+                info.setText("Login attempt canceled.");
+
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+                info.setText("Login attempt failed.");
+
+            }
+        });
+
+
+
+
+
+
+
+
+
         SharedPreferences sharedpreferences = this.getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
 
         final String username = (sharedpreferences.getString(Username, ""));
         final String password = (sharedpreferences.getString(Password, ""));
         edituser = (EditText) view.findViewById(R.id.create_edit_text_user);
         editpass = (EditText) view.findViewById(R.id.create_edit_text_pass);
-
-
         createlogin = (Button) view.findViewById(R.id.create_btn_login);
+
+
         createlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,5 +144,9 @@ public class LoginFragment extends MainActivityFragment {
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
 
 }
